@@ -2,6 +2,7 @@ package com.capgemini.demo.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +14,7 @@ public class CalculatorController {
 			.getLogger(CalculatorController.class);
 
 	@PostMapping("/add")
+	@CrossOrigin
 	public Integer add(@RequestParam(value = "num1") Integer num1,
 			@RequestParam(value = "num2") Integer num2) {
 
@@ -23,6 +25,7 @@ public class CalculatorController {
 	}
 
 	@PostMapping("/substract")
+	@CrossOrigin
 	public Integer substract(@RequestParam(value = "num1") Integer num1,
 			@RequestParam(value = "num2") Integer num2) {
 
@@ -33,6 +36,7 @@ public class CalculatorController {
 	}
 
 	@PostMapping("/multiply")
+	@CrossOrigin
 	public Integer multiply(@RequestParam Integer num1,
 			@RequestParam Integer num2) {
 
@@ -43,6 +47,7 @@ public class CalculatorController {
 	}
 
 	@PostMapping("/divide")
+	@CrossOrigin
 	public Integer divide(Integer num1, Integer num2) {
 
 		log.info("num1 is " + num1);

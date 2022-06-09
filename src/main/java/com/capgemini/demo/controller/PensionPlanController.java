@@ -4,6 +4,7 @@ import javax.validation.Valid;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import com.capgemini.demo.model.PensionPlan;
 public class PensionPlanController {
 
 	@PostMapping("/deduct")
+	@CrossOrigin
 	public ResponseEntity<Double> deduct(
 			@Valid @RequestBody PensionPlan pensionPlan) {
 		double deduction = 0;
